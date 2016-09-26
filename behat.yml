@@ -1,0 +1,22 @@
+default:
+ extensions:
+  Behat\MinkExtension:
+    base_url: ''
+    selenium2:
+        wd_host: ''
+        capabilities: { "platform": "Windows 7", "browserName": "firefox",}
+    sessions:
+      default:
+        selenium2:
+          wd_host: ''
+          capabilities: { "platform": "Windows 7", "browserName": "firefox",}
+  Drupal\DrupalExtension:
+    blackbox: ~
+    api_driver: 'drush'
+    drush:
+      alias: ''
+ suites:
+   default:
+     contexts:
+       - Drupal\DrupalExtension\Context\DrupalContext
+       - FeatureContext
